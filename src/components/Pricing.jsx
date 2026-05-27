@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { bridePortrait } from '../data/images';
+import { pricingImage } from '../data/images';
 import { useGSAPReveal } from '../hooks/useGSAPReveal';
 import { BRAND } from '../utils/constants';
 
@@ -44,7 +44,7 @@ export default function Pricing() {
         >
           <div className="relative min-h-[400px]">
             <img
-              src={bridePortrait}
+              src={pricingImage}
               alt="Luxury wedding photography"
               loading="lazy"
               className="w-full h-full object-cover absolute inset-0"

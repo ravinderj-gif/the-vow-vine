@@ -23,4 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
+instagram-page.html
+instagram-profile.json
+instagram-media.json
+instagram-posts.json
+
 .vercel

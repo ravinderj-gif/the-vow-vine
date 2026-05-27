@@ -37,7 +37,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between">
           <button onClick={() => handleNav('#home')} className="relative z-50">
-            <Logo className="w-28 md:w-36 h-auto" variant="light" />
+            <Logo className="w-12 h-12 md:w-14 md:h-14" variant="light" />
           </button>
 
           <div className="hidden lg:flex items-center gap-8">

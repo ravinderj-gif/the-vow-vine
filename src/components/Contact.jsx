@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
 import { useGSAPReveal } from '../hooks/useGSAPReveal';
 import { BRAND } from '../utils/constants';
-import { ceremony } from '../data/images';
+import { contactBg } from '../data/images';
 
 export default function Contact() {
   const headerRef = useGSAPReveal();
@@ -19,7 +19,7 @@ export default function Contact() {
     <section id="contact" className="relative section-padding overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={ceremony}
+          src={contactBg}
           alt=""
           loading="lazy"
           className="w-full h-full object-cover blur-sm scale-110"

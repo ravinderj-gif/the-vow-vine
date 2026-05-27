@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data/testimonials';
 import { useGSAPReveal } from '../hooks/useGSAPReveal';
-import { ceremony } from '../data/images';
+import { testimonialBg } from '../data/images';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -17,7 +17,7 @@ export default function Testimonials() {
     <section id="testimonials" className="relative section-padding overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={ceremony}
+          src={testimonialBg}
           alt=""
           loading="lazy"
           className="w-full h-full object-cover"

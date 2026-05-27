@@ -31,7 +31,7 @@ export default function Loader({ onComplete }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
         >
-          <Logo className="w-48 md:w-64 h-auto" variant="light" />
+          <Logo className="w-24 h-24 md:w-28 md:h-28" variant="light" />
         </motion.div>
 
         <motion.p

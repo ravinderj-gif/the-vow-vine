@@ -1,18 +1,28 @@
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 import InstagramIcon from './InstagramIcon';
-import { PORTFOLIO_ITEMS, REEL_ITEMS } from '../data/portfolio';
+import { INSTAGRAM_FEED, REEL_THUMBNAILS } from '../data/images';
+import { REEL_ITEMS } from '../data/portfolio';
 import { useGSAPReveal } from '../hooks/useGSAPReveal';
 import { BRAND } from '../utils/constants';
 
 export default function InstagramFeed() {
   const headerRef = useGSAPReveal();
-  const feedItems = [...PORTFOLIO_ITEMS.slice(0, 6), ...REEL_ITEMS.map((r) => ({
-    id: `reel-${r.id}`,
-    src: r.thumbnail,
-    isReel: true,
-    alt: r.title,
-  }))].slice(0, 9);
+
+  const feedItems = [
+    ...INSTAGRAM_FEED.slice(0, 6).map((src, i) => ({
+      id: `feed-${i}`,
+      src,
+      isReel: false,
+      alt: 'THE VOW VINE wedding photography',
+    })),
+    ...REEL_ITEMS.map((reel, i) => ({
+      id: `reel-${reel.id}`,
+      src: REEL_THUMBNAILS[i] || reel.thumbnail,
+      isReel: true,
+      alt: reel.title,
+    })),
+  ].slice(0, 9);
 
   return (
     <section className="section-padding bg-ivory">
@@ -42,7 +52,7 @@ export default function InstagramFeed() {
             >
               <img
                 src={item.src}
-                alt={item.alt || 'Instagram post'}
+                alt={item.alt}
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />

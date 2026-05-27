@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
-import heroVideo from '../assets/videos/hero-teaser.mp4';
+import { heroVideo } from '../data/images';
 import { BRAND } from '../utils/constants';
 import { scrollToSection } from '../hooks/useSmoothScroll';
 

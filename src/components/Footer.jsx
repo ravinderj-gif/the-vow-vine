@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 md:px-10">
         <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-ivory/10">
           <div>
-            <Logo className="w-36 h-auto mb-4" variant="light" />
+            <Logo className="w-16 h-16 mb-4" variant="light" />
             <p className="font-cormorant text-ivory/50 text-lg italic">
               {BRAND.tagline}
             </p>

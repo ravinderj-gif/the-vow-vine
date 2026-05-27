@@ -1,4 +1,16 @@
-export default function Logo({ className = '', variant = 'light' }) {
+import { BRAND_LOGO } from '../data/images';
+
+export default function Logo({ className = '', variant = 'light', useImage = true }) {
+  if (useImage) {
+    return (
+      <img
+        src={BRAND_LOGO}
+        alt="THE VOW VINE"
+        className={`rounded-full object-cover ${className}`}
+      />
+    );
+  }
+
   const textColor = variant === 'light' ? '#FAF7F2' : '#0F0F0F';
   const accentColor = variant === 'light' ? '#D4AF37' : '#7A0019';
 
