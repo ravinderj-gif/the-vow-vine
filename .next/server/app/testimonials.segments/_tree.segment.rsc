@@ -8,4 +8,4 @@
 :HL["/_next/static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/chunks/0r0gv00.nounm.css","style"]
 :HL["/assets/images/instagram/post-06-02.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"testimonials","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"2zXkUUT5CWuQu7AnrrYAw"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"testimonials","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"QN4E_4CmSM0bUZwaxB7Fv"}

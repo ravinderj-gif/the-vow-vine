@@ -27,5 +27,10 @@ instagram-page.html
 instagram-profile.json
 instagram-media.json
 instagram-posts.json
+data/inquiries.json
+
+.env
+.env.local
+.env*.local
 
 .vercel

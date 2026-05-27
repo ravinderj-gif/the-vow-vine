@@ -321,7 +321,7 @@ self.__SERVER_FILES_MANIFEST={
       "afterFiles": [
         {
           "source": "/backend/:path*",
-          "destination": "http://localhost:5000/:path*"
+          "destination": "https://the-vow-vine.vercel.app/:path*"
         }
       ],
       "fallback": []

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: the-vow-vine-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: https://thevow-vine.vercel.app
+      - key: ADMIN_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false

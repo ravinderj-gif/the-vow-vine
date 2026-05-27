@@ -12,8 +12,7 @@ export default function AdminPage() {
   }, []);
 
   const refresh = async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-    await fetch(`${apiUrl}/api/instagram/refresh`, {
+    await fetch('/api/instagram/refresh', {
       method: 'POST',
       headers: { 'x-admin-secret': secret },
     });

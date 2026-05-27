@@ -4,6 +4,7 @@
   "/about/page": "/about",
   "/admin/page": "/admin",
   "/api/inquiry/route": "/api/inquiry",
+  "/api/instagram/refresh/route": "/api/instagram/refresh",
   "/api/instagram/route": "/api/instagram",
   "/booking/page": "/booking",
   "/contact/page": "/contact",

@@ -21,7 +21,7 @@
     "afterFiles": [
       {
         "source": "/backend/:path*",
-        "destination": "http://localhost:5000/:path*",
+        "destination": "https://the-vow-vine.vercel.app/:path*",
         "regex": "^/backend(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
       }
     ],
@@ -70,6 +70,12 @@
       "regex": "^/api/instagram(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/instagram(?:/)?$"
+    },
+    {
+      "page": "/api/instagram/refresh",
+      "regex": "^/api/instagram/refresh(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/instagram/refresh(?:/)?$"
     },
     {
       "page": "/booking",

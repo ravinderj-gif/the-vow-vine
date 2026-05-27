@@ -4,6 +4,7 @@
   "/about/page": "app/about/page.js",
   "/admin/page": "app/admin/page.js",
   "/api/inquiry/route": "app/api/inquiry/route.js",
+  "/api/instagram/refresh/route": "app/api/instagram/refresh/route.js",
   "/api/instagram/route": "app/api/instagram/route.js",
   "/booking/page": "app/booking/page.js",
   "/contact/page": "app/contact/page.js",
