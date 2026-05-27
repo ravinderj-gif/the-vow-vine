@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wine: #5B0E2D;
+  --color-maroon: #7A0019;
+  --color-ivory: #FAF7F2;
+  --color-gold: #D4AF37;
+  --color-elegant-black: #0F0F0F;
+  --font-playfair: "Playfair Display", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-inter);
+  background: var(--color-ivory);
+  color: var(--color-elegant-black);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--color-gold); color: var(--color-elegant-black); }
+
+.glass { background: rgba(250,247,242,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(250,247,242,0.12); }
+.glass-dark { background: rgba(15,15,15,0.65); backdrop-filter: blur(24px); border: 1px solid rgba(212,175,55,0.15); }
+
+.section-padding { @apply px-5 py-20 md:px-10 md:py-28 lg:px-16 lg:py-32; }
+.luxury-heading { font-family: var(--font-playfair); @apply text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]; }
+.luxury-subheading { font-family: var(--font-cormorant); @apply text-xl md:text-2xl font-light tracking-wide; }
+
+.btn-primary { @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm uppercase tracking-[0.2em] font-medium transition-all duration-500; font-family: var(--font-poppins); background: linear-gradient(135deg,#7A0019,#5B0E2D); color: #FAF7F2; border: 1px solid rgba(212,175,55,0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(91,14,45,0.4); border-color: #D4AF37; }
+.btn-outline { @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm uppercase tracking-[0.2em] font-medium transition-all duration-500; font-family: var(--font-poppins); background: transparent; color: #FAF7F2; border: 1px solid rgba(250,247,242,0.4); }
+.btn-outline:hover { background: rgba(250,247,242,0.1); border-color: #D4AF37; }
+.btn-gold { @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm uppercase tracking-[0.2em] font-medium transition-all duration-500; font-family: var(--font-poppins); background: linear-gradient(135deg,#D4AF37,#B8941F); color: #0F0F0F; }
+
+.cinematic-overlay { background: linear-gradient(180deg,rgba(15,15,15,0.7) 0%,rgba(91,14,45,0.4) 50%,rgba(15,15,15,0.85) 100%); }
+.shimmer-text { background: linear-gradient(90deg,#FAF7F2 0%,#D4AF37 50%,#FAF7F2 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 4s linear infinite; }
+@keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+
+.masonry-grid { columns: 1; column-gap: 1rem; }
+@media (min-width:640px){.masonry-grid{columns:2}}
+@media (min-width:1024px){.masonry-grid{columns:3}}
+@media (min-width:1280px){.masonry-grid{columns:4}}
+.masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+
+.swiper-pagination-bullet { background: #D4AF37 !important; opacity: 0.4 !important; }
+.swiper-pagination-bullet-active { opacity: 1 !important; }

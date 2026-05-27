@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/admin/page": "/admin",
+  "/api/inquiry/route": "/api/inquiry",
+  "/api/instagram/route": "/api/instagram",
+  "/booking/page": "/booking",
+  "/contact/page": "/contact",
+  "/films/page": "/films",
+  "/instagram/page": "/instagram",
+  "/packages/page": "/packages",
+  "/page": "/",
+  "/portfolio/page": "/portfolio",
+  "/testimonials/page": "/testimonials"
+}
