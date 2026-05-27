@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useGSAPReveal, useParallax } from '../hooks/useGSAPReveal';
 import { useCounter } from '../hooks/useCounter';
 import { COUNTERS } from '../utils/constants';
-import brandCard from '../assets/images/brand-card.jpg';
+import { indianCouple } from '../data/images';
 
 function CounterItem({ value, suffix, label }) {
   const { count, ref } = useCounter(value, 2500);
@@ -53,8 +53,8 @@ export default function About() {
           <div className="relative">
             <div ref={imageRef} className="relative overflow-hidden rounded-sm">
               <img
-                src={brandCard}
-                alt="THE VOW VINE brand"
+                src={indianCouple}
+                alt="Luxury Indian wedding couple"
                 loading="lazy"
                 className="w-full h-[400px] md:h-[500px] object-cover object-top"
               />

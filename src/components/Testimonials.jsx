@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data/testimonials';
 import { useGSAPReveal } from '../hooks/useGSAPReveal';
-import pricingRef from '../assets/images/pricing-reference.jpg';
+import { ceremony } from '../data/images';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -17,7 +17,7 @@ export default function Testimonials() {
     <section id="testimonials" className="relative section-padding overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={pricingRef}
+          src={ceremony}
           alt=""
           loading="lazy"
           className="w-full h-full object-cover"
@@ -56,12 +56,9 @@ export default function Testimonials() {
                   &ldquo;{item.quote}&rdquo;
                 </p>
                 <div className="mt-8 flex items-center justify-center gap-4">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-14 h-14 rounded-full object-cover border-2 border-gold/30"
-                  />
+                  <div className="w-14 h-14 rounded-full border-2 border-gold/30 bg-wine flex items-center justify-center">
+                    <span className="font-playfair text-ivory text-sm">{item.initials}</span>
+                  </div>
                   <div className="text-left">
                     <p className="font-playfair text-ivory text-lg">{item.name}</p>
                     <p className="text-ivory/50 text-sm font-poppins">{item.location}</p>
