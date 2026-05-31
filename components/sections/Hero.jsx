@@ -1,24 +1,64 @@
 'use client';
 
-import Link from 'next/link';
+import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronDown, MessageCircle } from 'lucide-react';
+import gsap from 'gsap';
 import { BRAND } from '@/lib/constants';
+import { scrollToSection } from '@/lib/scroll';
+
+function Particles() {
+  const particles = Array.from({ length: 30 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    size: Math.random() * 3 + 1,
+    delay: Math.random() * 5,
+    duration: Math.random() * 4 + 4,
+  }));
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((p) => (
+        <span key={p.id} className="particle absolute rounded-full bg-gold/30" style={{ left: p.left, top: p.top, width: p.size, height: p.size, animationDelay: `${p.delay}s`, animationDuration: `${p.duration}s` }} />
+      ))}
+    </div>
+  );
+}
 
 export default function Hero({ videoSrc = '/assets/videos/instagram/post-08-01.mp4' }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      gsap.fromTo(videoRef.current, { scale: 1 }, { scale: 1.15, duration: 20, ease: 'none', repeat: -1, yoyo: true });
+    }
+  }, []);
+
   return (
-    <section className="relative h-screen min-h-[700px] overflow-hidden">
-      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite]" src={videoSrc} />
-      <div className="cinematic-overlay absolute inset-0" />
+    <section id="home" className="relative h-screen min-h-[700px] overflow-hidden">
+      <div className="absolute inset-0">
+        <video ref={videoRef} autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+        <div className="cinematic-overlay absolute inset-0" />
+        <Particles />
+      </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-5">
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-gold text-xs md:text-sm uppercase tracking-[0.4em] mb-6">{BRAND.services}</motion.p>
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="luxury-heading text-ivory max-w-5xl shimmer-text">{BRAND.tagline}</motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-6 max-w-2xl text-ivory/70 font-[family-name:var(--font-cormorant)] text-xl md:text-2xl">Luxury Wedding Photography & Cinematic Storytelling That Preserves Every Emotion Forever.</motion.p>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.4 }} className="mt-10 flex flex-col sm:flex-row gap-4">
-          <Link href="/portfolio" className="btn-primary">View Portfolio</Link>
-          <Link href="/booking" className="btn-outline">Book Now</Link>
-          <Link href="/films" className="btn-gold">Watch Films</Link>
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.8 }} className="text-gold text-xs md:text-sm uppercase tracking-[0.4em] font-[family-name:var(--font-poppins)] mb-6">{BRAND.services}</motion.p>
+        <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 1 }} className="luxury-heading text-ivory max-w-5xl shimmer-text">{BRAND.tagline}</motion.h1>
+        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.3, duration: 0.8 }} className="mt-6 md:mt-8 max-w-2xl text-ivory/70 font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-2xl font-light leading-relaxed">
+          Luxury Wedding Photography &amp; Cinematic Storytelling That Preserves Every Emotion Forever.
+        </motion.p>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.8 }} className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+          <button type="button" onClick={() => scrollToSection('#portfolio')} className="btn-primary">Explore Portfolio</button>
+          <button type="button" onClick={() => scrollToSection('#booking')} className="btn-outline">Book Your Wedding</button>
+          <a href={BRAND.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-gold flex items-center gap-2"><MessageCircle size={16} />WhatsApp Enquiry</a>
         </motion.div>
       </div>
+      <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }} type="button" onClick={() => scrollToSection('#about')} className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ivory/50 hover:text-gold transition-colors z-10" aria-label="Scroll down">
+        <ChevronDown size={28} className="animate-bounce" />
+      </motion.button>
     </section>
   );
 }

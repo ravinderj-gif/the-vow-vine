@@ -49,3 +49,11 @@ body {
 
 .swiper-pagination-bullet { background: #D4AF37 !important; opacity: 0.4 !important; }
 .swiper-pagination-bullet-active { opacity: 1 !important; }
+
+.particle { animation: float-particle linear infinite; }
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  50% { transform: translateY(-80px) translateX(20px); opacity: 0.3; }
+  90% { opacity: 0; }
+}
